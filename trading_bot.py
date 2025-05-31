@@ -17,6 +17,7 @@ logger = logging.getLogger("TradingBot")
 # --- Clase Principal del Bot ---
 class TradingBot:
     def __init__(self, symbol, timeframe_str, model_name_prefix, mt5_conn_params=None):
+        # TEST CHANGE FOR GITHUB DESKTOP SYNC - v2
         """
         Inicializa el Trading Bot.
         :param symbol: Símbolo del instrumento (ej: "EURUSD").
@@ -48,12 +49,12 @@ class TradingBot:
             logger.error(f"Timeframe string no reconocido: {self.timeframe_str}")
             raise ValueError(f"Timeframe string no reconocido: {self.timeframe_str}")
 
-        if dm.MT5_IMPORTED and not isinstance(self.timeframe_mt5, int):
-            logger.error(f"Timeframe {self.timeframe_str} no es una constante MT5 válida a pesar de que MT5 está importado.")
-            # Esto podría indicar un problema en la definición de constantes en data_manager si MT5_IMPORTED es True.
+        if dm.MT5_AVAILABLE and not isinstance(self.timeframe_mt5, int):
+            logger.error(f"Timeframe {self.timeframe_str} no es una constante MT5 válida a pesar de que MT5 está disponible.")
+            # Esto podría indicar un problema en la definición de constantes en data_manager si MT5_AVAILABLE es True.
             # Por seguridad, podríamos impedir la continuación si se espera una conexión MT5.
             # raise ValueError(f"Timeframe {self.timeframe_str} inválido para MT5.")
-            logger.warning(f"Timeframe {self.timeframe_str} podría no ser compatible con MT5 aunque esté importado.")
+            logger.warning(f"Timeframe {self.timeframe_str} podría no ser compatible con MT5 aunque esté disponible.")
 
 
         # Inicializar conexión con MT5 (si se proporcionan parámetros)
@@ -267,7 +268,7 @@ class TradingBot:
 
 # --- Bucle Principal de Ejemplo ---
 if __name__ == "__main__":
-    logger.info("Iniciando Trading Bot (simulación)...")
+    logger.info("Iniciando Trading Bot (simulación) - VERIFICANDO ACTUALIZACIÓN GIT v2...")
 
     # --- Configuración ---
     # Estos parámetros deberían venir de un archivo de configuración o argumentos de línea de comandos
