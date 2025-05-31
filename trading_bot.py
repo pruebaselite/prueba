@@ -191,7 +191,7 @@ class TradingBot:
             logger.info(f"DECISIÓN ENSEMBLE: {signal_type_enum.value} (Proba P(1)={final_proba_p1:.3f}, Umbral={conf_thresh})")
             # Pasar current_features_df a _execute_simulated_trade
             self._execute_simulated_trade(signal_type_enum, latest_data_point['close'].iloc[0], 0.1, current_features_df)
-        else: logger.info(f"DECISIÓN ENSEMBLE: HOLD (Proba P(1)={final_proba_p1:.3f}, Umbral={conf_thresh}})")
+        else: logger.info(f"DECISIÓN ENSEMBLE: HOLD (Proba P(1)={final_proba_p1:.3f}, Umbral={conf_thresh})")
 
     def _execute_simulated_trade(self, signal_type, price, volume, features_df_for_trade):
         """
