@@ -1,0 +1,8 @@
+lightgbm
+xgboost
+pandas
+numpy
+python-dotenv
+SQLAlchemy
+scikit-learn
+joblib
